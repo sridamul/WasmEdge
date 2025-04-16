@@ -8,6 +8,12 @@ wasmedge_add_executable(componentTests
 
 add_test(componentTests componentTests)
 
+file(COPY
+  ${CMAKE_CURRENT_SOURCE_DIR}/componentTestData
+  DESTINATION
+  ${CMAKE_CURRENT_BINARY_DIR}
+)
+
 target_link_libraries(componentTests
   PRIVATE
   wasmedgeVM
